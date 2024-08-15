@@ -135,7 +135,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware_${{ steps.compile.outputs.DEVICE_NAME }}_${{ steps.compile.outputs.FILE_DATE }}
+        name: OpenWrt_firmware_X86_64_$(date +"%Y.%m.%d-%H%M")
         path: ${{ steps.organize.outputs.FIRMWARE }}
         
     #- name: Upload firmware to cowtransfer
